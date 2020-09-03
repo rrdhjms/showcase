@@ -26,6 +26,8 @@ jobs:
         key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
         restore-keys: ${{ runner.os }}-mix-
     - name: Install dependencies
+      working-directory: server
       run: mix deps.get
     - name: Run tests
+      working-directory: server
       run: mix test
