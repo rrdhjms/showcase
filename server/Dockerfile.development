@@ -1,0 +1,17 @@
+FROM elixir:latest
+
+ENV MIX_ENV=dev
+
+WORKDIR /src
+
+COPY . .
+
+RUN mix local.hex --force && \
+  mix local.rebar --force && \
+  mix archive.install hex phx_new 1.5.3 --force && \
+  mix deps.get -y && \
+  mix deps.compile
+
+EXPOSE 4000
+
+CMD ["mix", "phx.server"]

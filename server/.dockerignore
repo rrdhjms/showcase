@@ -1,0 +1,4 @@
+deps
+_build
+test
+erl_crash.dump

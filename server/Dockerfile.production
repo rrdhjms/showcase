@@ -1,0 +1,43 @@
+# Multistage container builder. A release version of Elixir cannot use Mix.
+FROM elixir:1.10.4-alpine AS builder
+
+RUN apk add --no-cache build-base
+
+ENV MIX_ENV=prod
+
+WORKDIR /app
+
+COPY . .
+
+RUN mix local.hex --force && \
+  mix local.rebar --force && \
+  mix deps.get --only $MIX_ENV && \
+  mix deps.compile && \
+  mix release
+
+
+FROM alpine:3.9 AS app
+
+RUN apk add --no-cache openssl ncurses-libs bash
+
+ENV MIX_ENV=prod
+
+RUN mkdir /app
+
+WORKDIR /app
+
+COPY --from=builder /app/_build/prod/rel/prod ./
+
+COPY entrypoint.sh .
+
+RUN chown -R nobody: /app
+
+USER nobody
+
+ENV HOME=/app
+
+#CMD ["bin/prod", "start"]
+CMD ["bash", "/app/entrypoint.sh"]
+
+# docker build --tag showcase_server -f ./Dockerfile.production .
+# docker run --rm -e SECRET_KEY_BASE=1 --name showcase showcase_server
