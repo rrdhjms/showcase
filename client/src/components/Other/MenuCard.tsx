@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardTitle, CardBody, Row, Col, CardFooter } from 'reactstrap';
-import Icon from '@material-ui/core/Icon';
 import { useHistory } from 'react-router-dom';
 
 type Props = {
@@ -29,7 +28,7 @@ export default function MenuCard({
         <Row>
           <Col md="4" xs="5">
             <div className="icon-big text-center icon-warning">
-              <Icon style={{ color: color }}>{icon}</Icon>
+              <i style={{ color: color }} className={icon} />
             </div>
           </Col>
           <Col md="8" xs="7">

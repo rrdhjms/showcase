@@ -1,0 +1,31 @@
+.serviceList {
+  display: grid;
+  justify-content: center;
+  row-gap: 20px;
+  column-gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.topParagraph {
+  text-align: center;
+  padding-bottom: 0.625rem;
+}
+
+.numStats {
+  font-weight: 300;
+  font-size: 0.9em;
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-end;
+  position: relative;
+  vertical-align: text-bottom;
+}
+
+.numStats > * {
+  margin-bottom: 0.5rem;
+}
+
+.numStats > div {
+  display: flex;
+  align-items: flex-end;
+}

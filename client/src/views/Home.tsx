@@ -1,33 +1,76 @@
-import React from 'react';
-import MenuCard from 'components/MenuCard';
+import React, { useState, useEffect } from 'react';
+import MenuCard from 'components/Other/MenuCard';
 import routes from '../routes';
+import styles from './Home.module.css';
+import ListHeader from 'components/Other/ListHeader';
+import { Input, InputGroup, InputGroupAddon, InputGroupText } from 'reactstrap';
 
 const Home = () => {
+  const [routesList, setRoutes] = useState(routes);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const dynamicSearch = () =>
+    routesList.filter((route) =>
+      route.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+  useEffect(() => {
+    setRoutes(
+      routes.filter((route) => {
+        return route.name !== 'Home';
+      })
+    );
+  }, []);
+
   return (
     <>
-      <p style={{ textAlign: 'center', paddingBottom: '0.625rem' }}>
-        Some stuff about what is going on here, a little introduction and all
-        that
-      </p>
-      <div
-        style={{
-          display: 'grid',
-          justifyContent: 'center',
-          gridGap: '20px 40px',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(370px, 1fr))',
-        }}
-      >
-        {routes.map((prop, key) => {
-          return (
-            <MenuCard
-              path={prop.path}
-              icon={prop.icon}
-              name={prop.name}
-              description={prop.description}
-              color={prop.color}
-              key={key}
-            />
-          );
+      <header>
+        <p className={styles.topParagraph}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+          condimentum turpis justo, vitae viverra mauris feugiat eu.
+          Pellentesque ac risus vehicula risus iaculis hendrerit ac et risus.
+          Aenean faucibus, dolor interdum dictum vehicula, sem massa dignissim
+          orci, sit amet mattis ex odio id metus. Maecenas velit nulla, aliquet
+          semper lacus et, tempor bibendum eros. Suspendisse elementum risus
+          vitae tincidunt suscipit. Vestibulum sit amet arcu ac est commodo
+          ullamcorper. Duis bibendum lacus ut dapibus semper.
+        </p>
+      </header>
+      <form style={{ width: '370px', marginBottom: '1rem' }}>
+        <InputGroup className="no-border">
+          <Input
+            type="text"
+            onChange={(e) => setSearchTerm(e.target.value)}
+            value={searchTerm}
+            placeholder="Search..."
+          />
+          <InputGroupAddon addonType="append">
+            <InputGroupText>
+              <i className="nc-icon nc-zoom-split" />
+            </InputGroupText>
+          </InputGroupAddon>
+        </InputGroup>
+      </form>
+
+      <ListHeader
+        header="Services"
+        info={`Showing ${dynamicSearch().length} services`}
+      />
+      <div className={styles.serviceList}>
+        {dynamicSearch().map((prop, key) => {
+          if (prop.name !== 'Home') {
+            return (
+              <MenuCard
+                path={prop.path}
+                icon={prop.icon}
+                name={prop.name}
+                description={prop.description}
+                color={prop.color}
+                key={key}
+              />
+            );
+          }
+          return <></>;
         })}
       </div>
     </>

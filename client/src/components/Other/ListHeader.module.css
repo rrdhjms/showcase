@@ -1,0 +1,18 @@
+.numStats {
+  font-weight: 300;
+  font-size: 0.9em;
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-end;
+  position: relative;
+  vertical-align: text-bottom;
+}
+
+.numStats > * {
+  margin-bottom: 0.5rem;
+}
+
+.numStats > div {
+  display: flex;
+  align-items: flex-end;
+}
