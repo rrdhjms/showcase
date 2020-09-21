@@ -4,6 +4,10 @@
   min-height: 53px;
   margin-bottom: 20px;
 
+  &.navbar-lg {
+    min-height: 30vh;
+  }
+
   a {
     vertical-align: middle;
 

@@ -53,8 +53,8 @@ const Home = () => {
       </form>
 
       <ListHeader
-        header="Services"
-        info={`Showing ${dynamicSearch().length} services`}
+        header="Projects"
+        info={`Showing ${dynamicSearch().length} projects`}
       />
       <div className={styles.serviceList}>
         {dynamicSearch().map((prop, key) => {

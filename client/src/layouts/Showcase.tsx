@@ -5,16 +5,20 @@ import styles from './App.module.css';
 import TopNav from 'components/Navbar/TopNav';
 import routes from '../routes';
 
-function App() {
+function Showcase() {
   return (
     <div className={`wrapper ${styles.app}`}>
       <div className="main-content-panel">
         <TopNav />
-        <div className="content">
+        <div className="content content-navbar-lg">
           <Switch>
             {routes.map((prop, key) => {
               return (
-                <Route path={prop.path} component={prop.component} key={key} />
+                <Route
+                  path={`${prop.layout}/${prop.path}`}
+                  component={prop.component}
+                  key={key}
+                />
               );
             })}
           </Switch>
@@ -27,4 +31,4 @@ function App() {
   );
 }
 
-export default App;
+export default Showcase;

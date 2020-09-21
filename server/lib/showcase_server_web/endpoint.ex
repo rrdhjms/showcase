@@ -46,6 +46,7 @@ defmodule ShowcaseServerWeb.Endpoint do
 
   plug Plug.MethodOverride
   plug Plug.Head
+  plug CORSPlug, origin: "*"
   plug Plug.Session, @session_options
   plug ShowcaseServerWeb.Router
 end

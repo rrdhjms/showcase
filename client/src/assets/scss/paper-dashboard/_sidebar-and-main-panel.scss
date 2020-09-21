@@ -321,7 +321,7 @@
 
 .main-content-panel {
   position: relative;
-  width: $sidebar-mini-width;
+  // width: $sidebar-mini-width;
   max-width: 1280px;
   background-color: #f4f3ef;
 
@@ -331,6 +331,10 @@
     padding: 0 30px 30px;
     min-height: calc(100vh - 123px);
     margin-top: 93px;
+  }
+
+  > .content-navbar-lg {
+    margin-top: 30vh;
   }
 
   > .navbar {
