@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { Button, Input } from 'reactstrap';
 import { checkLuhn } from '../api/luhn';
-import { useHistory } from 'react-router-dom';
+import { Crumb } from 'types/Breadcrumbs';
+import Breadcrumbs from 'components/Other/Breadcrumbs';
 
-export default function Luhn() {
+type Props = {
+  crumbs: Array<Crumb>;
+};
+
+const Luhn = ({ crumbs }: Props) => {
   const [result, setResult] = useState<any | null>(null);
   const [luhn, setLuhn] = useState<number>();
-  const history = useHistory();
 
   const onClick = async () => {
     if (luhn) {
@@ -21,6 +25,7 @@ export default function Luhn() {
 
   return (
     <>
+      <Breadcrumbs crumbs={crumbs} />
       <h3>Luhn</h3>
       <p>
         What is it?
@@ -38,4 +43,6 @@ export default function Luhn() {
       <h4>{result}</h4>
     </>
   );
-}
+};
+
+export default Luhn;

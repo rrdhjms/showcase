@@ -10,7 +10,10 @@ export default function TopNav() {
     >
       <Container fluid>
         <div className="navbar-wrapper">
-          <NavbarBrand href="/" style={{ color: '#252422', fontSize: '2.5em' }}>
+          <NavbarBrand
+            href="/showcase"
+            style={{ color: '#252422', fontSize: '2.5em' }}
+          >
             <i className="fas fa-code" /> Showcase
           </NavbarBrand>
         </div>

@@ -1,9 +1,16 @@
 import React from 'react';
-import { Input } from 'reactstrap';
+import Input from 'reactstrap/lib/Input';
+import { Crumb } from '../types/Breadcrumbs';
+import Breadcrumbs from 'components/Other/Breadcrumbs';
 
-export default function Acronym() {
+type Props = {
+  crumbs: Array<Crumb>;
+};
+
+const Acronym = ({ crumbs }: Props) => {
   return (
-    <div>
+    <>
+      <Breadcrumbs crumbs={crumbs} />
       <h3>Acronym Generator</h3>
       <p>
         What is it?
@@ -17,6 +24,8 @@ export default function Acronym() {
         bibendum lacus ut dapibus semper.
       </p>
       <Input type="text" />
-    </div>
+    </>
   );
-}
+};
+
+export default Acronym;

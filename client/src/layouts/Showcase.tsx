@@ -3,7 +3,7 @@ import { Container } from 'reactstrap';
 import { Route, Switch } from 'react-router-dom';
 import styles from './App.module.css';
 import TopNav from 'components/Navbar/TopNav';
-import routes from '../routes';
+import routes, { breadcrumbs } from '../routes';
 
 function Showcase() {
   return (
@@ -15,9 +15,14 @@ function Showcase() {
             {routes.map((prop, key) => {
               return (
                 <Route
-                  path={`${prop.layout}/${prop.path}`}
-                  component={prop.component}
+                  exact
+                  path={prop.path}
                   key={key}
+                  render={(props) => {
+                    return (
+                      <prop.Component {...props} crumbs={breadcrumbs(props)} />
+                    );
+                  }}
                 />
               );
             })}

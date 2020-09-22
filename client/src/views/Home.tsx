@@ -4,8 +4,15 @@ import routes from '../routes';
 import styles from './Home.module.css';
 import ListHeader from 'components/Other/ListHeader';
 import { Input, InputGroup, InputGroupAddon, InputGroupText } from 'reactstrap';
+import { Crumb } from 'types/Breadcrumbs';
+import Breadcrumbs from 'components/Other/Breadcrumbs';
 
-const Home = () => {
+type Props = {
+  crumbs: Array<Crumb>;
+};
+
+const Home = ({ crumbs }: Props) => {
+  console.log(crumbs);
   const [routesList, setRoutes] = useState(routes);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -24,6 +31,7 @@ const Home = () => {
 
   return (
     <>
+      <Breadcrumbs crumbs={crumbs} />
       <header>
         <p className={styles.topParagraph}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In

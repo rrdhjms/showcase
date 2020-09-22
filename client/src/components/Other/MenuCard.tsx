@@ -19,11 +19,11 @@ export default function MenuCard({
 }: Props) {
   const history = useHistory();
 
-  const onClick = () => {
+  const handleClick = () => {
     history.push(path);
   };
   return (
-    <Card className="card-stats card-hover" onClick={() => onClick()}>
+    <Card className="card-stats card-hover" onClick={() => handleClick()}>
       <CardBody>
         <Row>
           <Col md="4" xs="5">

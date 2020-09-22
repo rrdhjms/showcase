@@ -13,7 +13,7 @@ ReactDOM.render(
     <Router history={hist}>
       <Switch>
         <Route path="/showcase" component={Showcase} />
-        <Redirect to="/showcase/home" />
+        <Redirect to="/showcase" />
       </Switch>
     </Router>
   </React.StrictMode>,
