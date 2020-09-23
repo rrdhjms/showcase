@@ -7,7 +7,7 @@ function Footer() {
 
       <div
         className="copyright"
-        style={{ display: 'flex', alignItems: 'center' }}
+        style={{ display: 'flex', alignItems: 'center', padding: '0 5px' }}
       >
         <img
           src={require('assets/images/red-panda.svg')}

@@ -8,6 +8,11 @@
     margin-bottom: 0;
   }
 
+  &.navbar-no-margin > div {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
   &.navbar-lg {
     min-height: 30vh;
     margin-top: 5vh;
