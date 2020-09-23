@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import { Button, Input } from 'reactstrap';
-import { checkLuhn } from '../api/luhn';
-import { Crumb } from 'types/Breadcrumbs';
+import React from 'react';
+import { Crumb } from '../types/Breadcrumbs';
 import Breadcrumbs from 'components/Other/Breadcrumbs';
 import route from 'types/route';
 import HeaderLg from 'components/Header/HeaderLg';
@@ -11,27 +9,13 @@ type Props = {
   info: route;
 };
 
-const Luhn = ({ crumbs, info }: Props) => {
-  const [result, setResult] = useState<any | null>(null);
-  const [luhn, setLuhn] = useState<number>();
-
-  const onClick = async () => {
-    if (luhn) {
-      const res = await checkLuhn(luhn);
-      if (res.error) {
-        console.log(res.error);
-      } else if (res.data) {
-        setResult(res.data.result);
-      }
-    }
-  };
-
+const DnDCharacter = ({ crumbs, info }: Props) => {
   return (
     <>
       <HeaderLg title={info.name} imagePath={info.imagePath} />
       <Breadcrumbs crumbs={crumbs} />
       <p>
-        What is it?
+        This page is under construction
         <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
         condimentum turpis justo, vitae viverra mauris feugiat eu. Pellentesque
         ac risus vehicula risus iaculis hendrerit ac et risus. Aenean faucibus,
@@ -41,11 +25,8 @@ const Luhn = ({ crumbs, info }: Props) => {
         suscipit. Vestibulum sit amet arcu ac est commodo ullamcorper. Duis
         bibendum lacus ut dapibus semper.
       </p>
-      <Input type="number" onChange={(e) => setLuhn(+e.target.value)}></Input>
-      <Button onClick={onClick}>Get</Button>
-      <h4>{result}</h4>
     </>
   );
 };
 
-export default Luhn;
+export default DnDCharacter;

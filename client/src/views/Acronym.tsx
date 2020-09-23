@@ -2,16 +2,19 @@ import React from 'react';
 import Input from 'reactstrap/lib/Input';
 import { Crumb } from '../types/Breadcrumbs';
 import Breadcrumbs from 'components/Other/Breadcrumbs';
+import route from 'types/route';
+import HeaderLg from 'components/Header/HeaderLg';
 
 type Props = {
   crumbs: Array<Crumb>;
+  info: route;
 };
 
-const Acronym = ({ crumbs }: Props) => {
+const Acronym = ({ crumbs, info }: Props) => {
   return (
     <>
+      <HeaderLg title={info.name} imagePath={info.imagePath} />
       <Breadcrumbs crumbs={crumbs} />
-      <h3>Acronym Generator</h3>
       <p>
         What is it?
         <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In

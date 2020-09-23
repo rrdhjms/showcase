@@ -6,13 +6,15 @@ import ListHeader from 'components/Other/ListHeader';
 import { Input, InputGroup, InputGroupAddon, InputGroupText } from 'reactstrap';
 import { Crumb } from 'types/Breadcrumbs';
 import Breadcrumbs from 'components/Other/Breadcrumbs';
+import HeaderLg from 'components/Header/HeaderLg';
+import route from 'types/route';
 
 type Props = {
   crumbs: Array<Crumb>;
+  info: route;
 };
 
-const Home = ({ crumbs }: Props) => {
-  console.log(crumbs);
+const Home = ({ crumbs, info }: Props) => {
   const [routesList, setRoutes] = useState(routes);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -31,6 +33,7 @@ const Home = ({ crumbs }: Props) => {
 
   return (
     <>
+      <HeaderLg title={info.name} imagePath={info.imagePath} />
       <Breadcrumbs crumbs={crumbs} />
       <header>
         <p className={styles.topParagraph}>

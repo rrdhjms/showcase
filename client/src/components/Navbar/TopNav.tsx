@@ -2,18 +2,12 @@ import React from 'react';
 import { Navbar, Container, NavbarBrand } from 'reactstrap';
 import styles from './TopNav.module.css';
 
-export default function TopNav() {
+function TopNav() {
   return (
-    <Navbar
-      expand="lg"
-      className={`navbar-absolute fixed-top navbar-lg ${styles.topnav}`}
-    >
+    <Navbar expand="lg" className={styles.topNav}>
       <Container fluid>
         <div className="navbar-wrapper">
-          <NavbarBrand
-            href="/showcase"
-            style={{ color: '#252422', fontSize: '2.5em' }}
-          >
+          <NavbarBrand href="/showcase">
             <i className="fas fa-code" /> Showcase
           </NavbarBrand>
         </div>
@@ -21,3 +15,5 @@ export default function TopNav() {
     </Navbar>
   );
 }
+
+export default TopNav;

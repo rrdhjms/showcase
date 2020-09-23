@@ -1,2 +1,15 @@
-.topnav {
+.topNav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #6159e6;
+}
+
+.topNav > div {
+  max-width: 1280px;
+}
+
+.topnav a {
+  color: white;
+  font-size: 1.5em;
 }

@@ -1,6 +1,18 @@
 import Home from 'views/Home';
 import Luhn from 'views/Luhn';
 import Acronym from 'views/Acronym';
+import route from 'types/route';
+import codeThinking from 'assets/images/code-thinking.svg';
+import creditCard from 'assets/images/credit-card.svg';
+import reading from 'assets/images/reading.svg';
+import chatBot from 'assets/images/chat-bot.svg';
+import toTheMoon from 'assets/images/to-the-moon.svg';
+import map from 'assets/images/map.svg';
+import fileAnalysis from 'assets/images/file-analysis.svg';
+import Bob from 'views/Bob';
+import SpaceAge from 'views/SpaceAge';
+import DnDCharacter from 'views/DnDCharacter';
+import WordCount from 'views/WordCount';
 
 /**
  * Create the breadcrumbs from the current url route
@@ -26,62 +38,69 @@ export const breadcrumbs = (props: any) => {
   );
 };
 
-const routes = [
+const routes: route[] = [
   {
     path: '/showcase',
     name: 'Home',
     icon: 'fas fa-home',
     Component: Home,
-    color: 'grey',
+    color: '#6C63FF',
     description: 'Home',
+    imagePath: codeThinking,
   },
   {
     path: '/showcase/luhn',
     name: 'Luhn',
     icon: 'far fa-credit-card',
     Component: Luhn,
-    color: 'blue',
+    color: '#6C63FF',
     description: 'Luhn Algorithm',
+    imagePath: creditCard,
   },
   {
     path: '/showcase/acronym',
     name: 'Acronym',
     icon: 'fas fa-spell-check',
     Component: Acronym,
-    color: 'green',
+    color: '#6C63FF',
     description: 'Acronym Generator',
+    imagePath: reading,
   },
   {
     path: '/showcase/bob',
     name: 'Bob',
     icon: 'far fa-comments',
-    Component: Home,
-    color: 'orange',
+    Component: Bob,
+    color: '#6C63FF',
     description: 'Chat with Bob',
+    imagePath: chatBot,
   },
   {
     path: '/showcase/space-age',
     name: 'Space Age',
     icon: 'fas fa-globe-africa',
-    Component: Home,
-    color: 'lightblue',
+    Component: SpaceAge,
+    color: '#6C63FF',
     description: 'See your age on different planets',
+    imagePath: toTheMoon,
   },
   {
     path: '/showcase/dnd-character',
     name: 'DnD Character',
     icon: 'fas fa-dungeon',
-    Component: Home,
-    color: 'brown',
+    Component: DnDCharacter,
+    color: '#6C63FF',
     description: 'Generate DnD character stats',
+    imagePath: map,
   },
   {
     path: '/showcase/word-count',
     name: 'Word Count',
     icon: 'far fa-file-word',
-    Component: Home,
-    color: 'purple',
+    Component: WordCount,
+    color: '#6C63FF',
     description: 'Word Counter',
+    imagePath: fileAnalysis,
   },
 ];
 

@@ -7,7 +7,7 @@ type Props = {
 };
 
 const Breadcrumbs = ({ crumbs }: Props) => {
-  if (crumbs.length < 1) return null;
+  if (crumbs.length <= 1) return null;
 
   return (
     <Breadcrumb>

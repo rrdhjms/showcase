@@ -2,14 +2,14 @@ import React from 'react';
 import { Container } from 'reactstrap';
 import { Route, Switch } from 'react-router-dom';
 import styles from './App.module.css';
-import TopNav from 'components/Navbar/TopNav';
 import routes, { breadcrumbs } from '../routes';
+import TopNav from 'components/Navbar/TopNav';
 
 function Showcase() {
   return (
     <div className={`wrapper ${styles.app}`}>
+      <TopNav />
       <div className="main-content-panel">
-        <TopNav />
         <div className="content content-navbar-lg">
           <Switch>
             {routes.map((prop, key) => {
@@ -20,7 +20,11 @@ function Showcase() {
                   key={key}
                   render={(props) => {
                     return (
-                      <prop.Component {...props} crumbs={breadcrumbs(props)} />
+                      <prop.Component
+                        {...props}
+                        crumbs={breadcrumbs(props)}
+                        info={prop}
+                      />
                     );
                   }}
                 />
