@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import styles from './App.module.css';
 import routes, { breadcrumbs } from '../routes';
 import TopNav from 'components/Navbar/TopNav';
+import Footer from 'components/Footer/Footer';
 
 function Showcase() {
   return (
@@ -32,9 +33,7 @@ function Showcase() {
             })}
           </Switch>
         </div>
-        <footer className="footer">
-          <Container>footer</Container>
-        </footer>
+        <Footer />
       </div>
     </div>
   );
