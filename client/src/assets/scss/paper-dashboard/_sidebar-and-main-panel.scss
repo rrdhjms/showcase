@@ -321,9 +321,11 @@
 
 .main-content-panel {
   position: relative;
-  // width: $sidebar-mini-width;
   max-width: 1280px;
+  width: 100%;
   background-color: #f4f3ef;
+  display: flex;
+  flex-direction: column;
 
   @include transition(0.5s, cubic-bezier(0.685, 0.0473, 0.346, 1));
 
@@ -335,7 +337,6 @@
 
   > .content-navbar-lg {
     margin-top: 0;
-    width: 100%;
   }
 
   > .navbar {

@@ -5,7 +5,7 @@ import route from 'types/route';
 import codeThinking from 'assets/images/code-thinking.svg';
 import creditCard from 'assets/images/credit-card.svg';
 import reading from 'assets/images/reading.svg';
-import chatBot from 'assets/images/chat-bot.svg';
+import vrChat from 'assets/images/vr-chat.svg';
 import toTheMoon from 'assets/images/to-the-moon.svg';
 import map from 'assets/images/map.svg';
 import fileAnalysis from 'assets/images/file-analysis.svg';
@@ -73,7 +73,7 @@ const routes: route[] = [
     Component: Bob,
     color: '#6C63FF',
     description: 'Chat with Bob',
-    imagePath: chatBot,
+    imagePath: vrChat,
   },
   {
     path: '/showcase/space-age',
