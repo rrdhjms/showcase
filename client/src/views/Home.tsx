@@ -33,8 +33,8 @@ const Home = ({ crumbs, info }: Props) => {
 
   return (
     <>
-      <HeaderLg title={info.name} imagePath={info.imagePath} />
       <Breadcrumbs crumbs={crumbs} />
+      <HeaderLg title={info.name} imagePath={info.imagePath} />
       <header>
         <p className={styles.topParagraph}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In

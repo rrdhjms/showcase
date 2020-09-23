@@ -4,8 +4,13 @@
   min-height: 53px;
   margin-bottom: 20px;
 
+  &.navbar-no-margin {
+    margin-bottom: 0;
+  }
+
   &.navbar-lg {
     min-height: 30vh;
+    margin-top: 5vh;
   }
 
   a {

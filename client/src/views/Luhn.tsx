@@ -28,8 +28,8 @@ const Luhn = ({ crumbs, info }: Props) => {
 
   return (
     <>
-      <HeaderLg title={info.name} imagePath={info.imagePath} />
       <Breadcrumbs crumbs={crumbs} />
+      <HeaderLg title={info.name} imagePath={info.imagePath} />
       <p>
         What is it?
         <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In

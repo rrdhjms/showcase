@@ -12,8 +12,8 @@ type Props = {
 const DnDCharacter = ({ crumbs, info }: Props) => {
   return (
     <>
-      <HeaderLg title={info.name} imagePath={info.imagePath} />
       <Breadcrumbs crumbs={crumbs} />
+      <HeaderLg title={info.name} imagePath={info.imagePath} />
       <p>
         This page is under construction
         <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
