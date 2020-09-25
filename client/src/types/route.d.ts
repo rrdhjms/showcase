@@ -6,6 +6,9 @@ type route = {
   color: string;
   description: string;
   imagePath: string;
+  link: string;
+  languageShield: string;
+  difficultyShield: string;
 };
 
 export default route;

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { resolve } from './resolve';
 
-export const checkLuhn = async (word: string) => {
+export const generateAcronym = async (word: string) => {
   const query = { params: { string: word } };
 
   return await resolve(

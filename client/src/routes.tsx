@@ -38,6 +38,15 @@ export const breadcrumbs = (props: any) => {
   );
 };
 
+const easyShield =
+  'https://img.shields.io/badge/-Easy-62B492?style=flat-square&logoColor=white';
+const mediumShield =
+  'https://img.shields.io/badge/-Medium-F48B00?style=flat-square&logoColor=white';
+// const hardShield =
+//   'https://img.shields.io/badge/-Hard-F34A56?style=flat-square&logoColor=white';
+const elixirShield =
+  'https://img.shields.io/badge/-Elixir-4B275F?style=flat-square&logo=elixir&logoColor=white';
+
 const routes: route[] = [
   {
     path: '/showcase',
@@ -47,6 +56,9 @@ const routes: route[] = [
     color: '#6C63FF',
     description: 'Home',
     imagePath: codeThinking,
+    link: '',
+    languageShield: '',
+    difficultyShield: '',
   },
   {
     path: '/showcase/luhn',
@@ -56,6 +68,9 @@ const routes: route[] = [
     color: '#6C63FF',
     description: 'Luhn Algorithm',
     imagePath: creditCard,
+    link: 'https://github.com/rrdhjms/elixir-exercism-io/tree/master/luhn',
+    languageShield: elixirShield,
+    difficultyShield: mediumShield,
   },
   {
     path: '/showcase/acronym',
@@ -63,8 +78,11 @@ const routes: route[] = [
     icon: 'fas fa-spell-check',
     Component: Acronym,
     color: '#6C63FF',
-    description: 'Acronym Generator',
+    description: 'Convert a phrase to its acronym.',
     imagePath: reading,
+    link: 'https://github.com/rrdhjms/elixir-exercism-io/tree/master/acronym',
+    languageShield: elixirShield,
+    difficultyShield: easyShield,
   },
   {
     path: '/showcase/bob',
@@ -74,6 +92,9 @@ const routes: route[] = [
     color: '#6C63FF',
     description: 'Chat with Bob',
     imagePath: vrChat,
+    link: 'https://github.com/rrdhjms/elixir-exercism-io/tree/master/bob',
+    languageShield: elixirShield,
+    difficultyShield: easyShield,
   },
   {
     path: '/showcase/space-age',
@@ -83,6 +104,9 @@ const routes: route[] = [
     color: '#6C63FF',
     description: 'See your age on different planets',
     imagePath: toTheMoon,
+    link: 'https://github.com/rrdhjms/elixir-exercism-io/tree/master/space-age',
+    languageShield: elixirShield,
+    difficultyShield: easyShield,
   },
   {
     path: '/showcase/dnd-character',
@@ -92,6 +116,10 @@ const routes: route[] = [
     color: '#6C63FF',
     description: 'Generate DnD character stats',
     imagePath: map,
+    link:
+      'https://github.com/rrdhjms/elixir-exercism-io/tree/master/dnd-character',
+    languageShield: elixirShield,
+    difficultyShield: easyShield,
   },
   {
     path: '/showcase/word-count',
@@ -101,6 +129,10 @@ const routes: route[] = [
     color: '#6C63FF',
     description: 'Word Counter',
     imagePath: fileAnalysis,
+    link:
+      'https://github.com/rrdhjms/elixir-exercism-io/tree/master/word-count',
+    languageShield: elixirShield,
+    difficultyShield: easyShield,
   },
 ];
 

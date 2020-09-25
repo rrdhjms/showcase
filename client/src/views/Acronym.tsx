@@ -1,9 +1,11 @@
-import React from 'react';
-import Input from 'reactstrap/lib/Input';
+import React, { useState } from 'react';
 import { Crumb } from '../types/Breadcrumbs';
 import Breadcrumbs from 'components/Other/Breadcrumbs';
 import route from 'types/route';
 import HeaderLg from 'components/Header/HeaderLg';
+import ProjectPage from './ProjectPage';
+import { Input, Button, Form } from 'reactstrap';
+import { generateAcronym } from 'api/acronym';
 
 type Props = {
   crumbs: Array<Crumb>;
@@ -11,22 +13,51 @@ type Props = {
 };
 
 const Acronym = ({ crumbs, info }: Props) => {
+  const [sentence, setSentence] = useState<string>('');
+  const [acronym, setAcronym] = useState<any | null>('');
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (sentence) {
+      const res = await generateAcronym(sentence);
+      if (res.error) {
+        console.log(res.error);
+      } else if (res.data) {
+        setAcronym(res.data.result);
+      }
+    }
+  };
+
   return (
     <>
       <Breadcrumbs crumbs={crumbs} />
       <HeaderLg title={info.name} imagePath={info.imagePath} />
-      <p>
-        What is it?
-        <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-        condimentum turpis justo, vitae viverra mauris feugiat eu. Pellentesque
-        ac risus vehicula risus iaculis hendrerit ac et risus. Aenean faucibus,
-        dolor interdum dictum vehicula, sem massa dignissim orci, sit amet
-        mattis ex odio id metus. Maecenas velit nulla, aliquet semper lacus et,
-        tempor bibendum eros. Suspendisse elementum risus vitae tincidunt
-        suscipit. Vestibulum sit amet arcu ac est commodo ullamcorper. Duis
-        bibendum lacus ut dapibus semper.
-      </p>
-      <Input type="text" />
+      <ProjectPage
+        info={info}
+        about="Techies love their TLA (Three Letter Acronyms)!"
+      >
+        <h4>Try it out</h4>
+        <Form onSubmit={(e) => handleSubmit(e)}>
+          <Input
+            type="text"
+            onChange={(e) => setSentence(e.target.value)}
+            placeholder="Enter a phrase"
+          />
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            <Button type="submit" color="primary">
+              Generate
+            </Button>
+
+            <p style={{ margin: '0', fontSize: '1.3rem' }}>{acronym}</p>
+          </div>
+        </Form>
+      </ProjectPage>
     </>
   );
 };
