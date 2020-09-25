@@ -5,7 +5,7 @@ import route from 'types/route';
 import HeaderLg from 'components/Header/HeaderLg';
 import ProjectPage from './ProjectPage';
 import styles from './SpaceAge.module.css';
-import { Input, Button } from 'reactstrap';
+import { Input, Button, FormGroup, Label, Col, Form } from 'reactstrap';
 
 type Props = {
   crumbs: Array<Crumb>;
@@ -17,15 +17,26 @@ const SpaceAge = ({ crumbs, info }: Props) => {
     <>
       <Breadcrumbs crumbs={crumbs} />
       <HeaderLg title={info.name} imagePath={info.imagePath} />
-      <ProjectPage
-        info={info}
-        about="Techies love their TLA (Three Letter Acronyms)!"
-      >
+      <ProjectPage info={info} about="Space Age stuff here.">
         <div className={styles.spaceArea}>
           <h4>Try it out!</h4>
-          <Input type="number" placeholder="Enter an age in years on Earth" />
-          <Button color="primary">Calculate</Button>
-          <div>
+          <Form>
+            <FormGroup row>
+              <Label for="ageInput" sm={2}>
+                Age
+              </Label>
+              <Col sm={10}>
+                <Input
+                  type="number"
+                  id="ageInput"
+                  placeholder="Enter an age in years on Earth"
+                />
+              </Col>
+            </FormGroup>
+
+            <Button color="primary">Calculate</Button>
+          </Form>
+          <div className={styles.planetRow}>
             <div className={styles.planetArea}>
               <img
                 className={styles.planet}
@@ -36,7 +47,7 @@ const SpaceAge = ({ crumbs, info }: Props) => {
             </div>
             <h2>N/A</h2>
           </div>
-          <div>
+          <div className={styles.planetRow}>
             <div className={styles.planetArea}>
               <img
                 className={styles.planet}
@@ -47,7 +58,7 @@ const SpaceAge = ({ crumbs, info }: Props) => {
             </div>
             <h2>N/A</h2>
           </div>
-          <div>
+          <div className={styles.planetRow}>
             <div className={styles.planetArea}>
               <img
                 className={styles.planet}
@@ -58,7 +69,7 @@ const SpaceAge = ({ crumbs, info }: Props) => {
             </div>
             <h2>N/A</h2>
           </div>
-          <div>
+          <div className={styles.planetRow}>
             <div className={styles.planetArea}>
               <img
                 className={styles.planet}
@@ -69,7 +80,7 @@ const SpaceAge = ({ crumbs, info }: Props) => {
             </div>
             <h2>N/A</h2>
           </div>
-          <div>
+          <div className={styles.planetRow}>
             <div className={styles.planetArea}>
               <img
                 className={styles.planet}
@@ -80,7 +91,7 @@ const SpaceAge = ({ crumbs, info }: Props) => {
             </div>
             <h2>N/A</h2>
           </div>
-          <div>
+          <div className={styles.planetRow}>
             <div className={styles.planetArea}>
               <img
                 className={styles.planet}
@@ -91,7 +102,7 @@ const SpaceAge = ({ crumbs, info }: Props) => {
             </div>
             <h2>N/A</h2>
           </div>
-          <div>
+          <div className={styles.planetRow}>
             <div className={styles.planetArea}>
               <img
                 className={styles.planet}
@@ -102,7 +113,7 @@ const SpaceAge = ({ crumbs, info }: Props) => {
             </div>
             <h2>N/A</h2>
           </div>
-          <div>
+          <div className={styles.planetRow}>
             <div className={styles.planetArea}>
               <img
                 className={styles.planet}

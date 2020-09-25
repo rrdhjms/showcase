@@ -3,12 +3,9 @@
   flex-direction: column;
 }
 
-.spaceArea > div {
+.spaceArea > div,
+form {
   margin-bottom: 20px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  justify-content: space-around;
 }
 
 .spaceArea > button {
@@ -21,6 +18,13 @@
 
 .planet {
   width: 100px;
+}
+
+.planetRow {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .planetArea {

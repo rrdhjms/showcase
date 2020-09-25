@@ -1,6 +1,8 @@
 import React from 'react';
 import { Card, CardTitle, CardBody, Row, Col, CardFooter } from 'reactstrap';
 import { useHistory } from 'react-router-dom';
+import difficulty from 'enums/difficulty';
+import { getDifficulty } from 'constants/colors';
 
 type Props = {
   path: string;
@@ -8,6 +10,7 @@ type Props = {
   name: string;
   description: string;
   color: string;
+  difficulty: difficulty;
 };
 
 export default function MenuCard({
@@ -16,6 +19,7 @@ export default function MenuCard({
   name,
   description,
   color,
+  difficulty,
 }: Props) {
   const history = useHistory();
 
@@ -33,7 +37,12 @@ export default function MenuCard({
           </Col>
           <Col md="8" xs="7">
             <div className="numbers">
-              <p className="card-category">Elixir</p>
+              <p
+                style={{ color: getDifficulty(difficulty) }}
+                className="card-category"
+              >
+                {difficulty}
+              </p>
               <CardTitle tag="p">{name}</CardTitle>
             </div>
           </Col>

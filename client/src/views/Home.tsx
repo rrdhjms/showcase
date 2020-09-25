@@ -8,6 +8,7 @@ import { Crumb } from 'types/Breadcrumbs';
 import Breadcrumbs from 'components/Other/Breadcrumbs';
 import HeaderLg from 'components/Header/HeaderLg';
 import route from 'types/route';
+import { icon_purple } from 'constants/colors';
 
 type Props = {
   crumbs: Array<Crumb>;
@@ -69,14 +70,15 @@ const Home = ({ crumbs, info }: Props) => {
       />
       <div className={styles.serviceList}>
         {dynamicSearch().map((prop, key) => {
-          if (prop.name !== 'Home') {
+          if (prop.project) {
             return (
               <MenuCard
                 path={prop.path}
                 icon={prop.icon}
                 name={prop.name}
+                difficulty={prop.difficulty}
                 description={prop.description}
-                color={prop.color}
+                color={icon_purple}
                 key={key}
               />
             );

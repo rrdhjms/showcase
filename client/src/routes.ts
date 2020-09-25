@@ -13,6 +13,7 @@ import Bob from 'views/Bob';
 import SpaceAge from 'views/SpaceAge';
 import DnDCharacter from 'views/DnDCharacter';
 import WordCount from 'views/WordCount';
+import difficulty from 'enums/difficulty';
 
 /**
  * Create the breadcrumbs from the current url route
@@ -38,101 +39,94 @@ export const breadcrumbs = (props: any) => {
   );
 };
 
-const easyShield =
-  'https://img.shields.io/badge/-Easy-62B492?style=flat-square&logoColor=white';
-const mediumShield =
-  'https://img.shields.io/badge/-Medium-F48B00?style=flat-square&logoColor=white';
-// const hardShield =
-//   'https://img.shields.io/badge/-Hard-F34A56?style=flat-square&logoColor=white';
-const elixirShield =
-  'https://img.shields.io/badge/-Elixir-4B275F?style=flat-square&logo=elixir&logoColor=white';
-
 const routes: route[] = [
   {
     path: '/showcase',
+    project: false,
     name: 'Home',
     icon: 'fas fa-home',
     Component: Home,
-    color: '#6C63FF',
     description: 'Home',
     imagePath: codeThinking,
-    link: '',
-    languageShield: '',
-    difficultyShield: '',
+    gitLink: '',
+    language: '',
+    difficulty: difficulty.Easy,
   },
   {
     path: '/showcase/luhn',
+    project: true,
     name: 'Luhn',
     icon: 'far fa-credit-card',
     Component: Luhn,
-    color: '#6C63FF',
     description: 'Luhn Algorithm',
     imagePath: creditCard,
-    link: 'https://github.com/rrdhjms/elixir-exercism-io/tree/master/luhn',
-    languageShield: elixirShield,
-    difficultyShield: mediumShield,
+    gitLink: 'https://github.com/rrdhjms/elixir-exercism-io/tree/master/luhn',
+    language: 'Elixir',
+    difficulty: difficulty.Medium,
   },
   {
     path: '/showcase/acronym',
+    project: true,
     name: 'Acronym',
     icon: 'fas fa-spell-check',
     Component: Acronym,
-    color: '#6C63FF',
     description: 'Convert a phrase to its acronym.',
     imagePath: reading,
-    link: 'https://github.com/rrdhjms/elixir-exercism-io/tree/master/acronym',
-    languageShield: elixirShield,
-    difficultyShield: easyShield,
+    gitLink:
+      'https://github.com/rrdhjms/elixir-exercism-io/tree/master/acronym',
+    language: 'Elixir',
+    difficulty: difficulty.Easy,
   },
   {
     path: '/showcase/bob',
+    project: true,
     name: 'Bob',
     icon: 'far fa-comments',
     Component: Bob,
-    color: '#6C63FF',
     description: 'Chat with Bob',
     imagePath: vrChat,
-    link: 'https://github.com/rrdhjms/elixir-exercism-io/tree/master/bob',
-    languageShield: elixirShield,
-    difficultyShield: easyShield,
+    gitLink: 'https://github.com/rrdhjms/elixir-exercism-io/tree/master/bob',
+    language: 'Elixir',
+    difficulty: difficulty.Easy,
   },
   {
     path: '/showcase/space-age',
+    project: true,
     name: 'Space Age',
     icon: 'fas fa-globe-africa',
     Component: SpaceAge,
-    color: '#6C63FF',
     description: 'See your age on different planets',
     imagePath: toTheMoon,
-    link: 'https://github.com/rrdhjms/elixir-exercism-io/tree/master/space-age',
-    languageShield: elixirShield,
-    difficultyShield: easyShield,
+    gitLink:
+      'https://github.com/rrdhjms/elixir-exercism-io/tree/master/space-age',
+    language: 'Elixir',
+    difficulty: difficulty.Easy,
   },
   {
     path: '/showcase/dnd-character',
+    project: true,
     name: 'DnD Character',
     icon: 'fas fa-dungeon',
     Component: DnDCharacter,
-    color: '#6C63FF',
     description: 'Generate DnD character stats',
     imagePath: map,
-    link:
+    gitLink:
       'https://github.com/rrdhjms/elixir-exercism-io/tree/master/dnd-character',
-    languageShield: elixirShield,
-    difficultyShield: easyShield,
+    language: 'Elixir',
+    difficulty: difficulty.Easy,
   },
   {
     path: '/showcase/word-count',
+    project: true,
     name: 'Word Count',
     icon: 'far fa-file-word',
     Component: WordCount,
-    color: '#6C63FF',
     description: 'Word Counter',
     imagePath: fileAnalysis,
-    link:
+    gitLink:
       'https://github.com/rrdhjms/elixir-exercism-io/tree/master/word-count',
-    languageShield: elixirShield,
-    difficultyShield: easyShield,
+    language: 'Elixir',
+    difficulty: difficulty.Easy,
   },
 ];
 

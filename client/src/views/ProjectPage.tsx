@@ -1,6 +1,7 @@
 import React from 'react';
 import route from 'types/route';
 import styles from './ProjectPage.module.css';
+import { getDifficulty, getLanguage } from 'constants/shields';
 
 type Props = {
   info: route;
@@ -16,14 +17,15 @@ const ProjectPage = ({ info, about, children }: Props) => {
         <h4>Overview</h4>
         <div className={styles.text}>
           <p>
-            Difficulty: <img alt="difficulty" src={info.difficultyShield} />
+            Difficulty:{' '}
+            <img alt="difficulty" src={getDifficulty(info.difficulty)} />
           </p>
           <p>
-            Language: <img alt="language" src={info.languageShield} />
+            Language: <img alt="language" src={getLanguage(info.language)} />
           </p>
           <p>Description: {info.description}</p>
           <p>
-            Link: <a href={info.link}>GitHub</a>
+            Link: <a href={info.gitLink}>GitHub</a>
           </p>
         </div>
         <div>
