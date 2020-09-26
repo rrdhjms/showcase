@@ -1,5 +1,5 @@
 import { easy, medium, hard } from './colors';
-import difficulty from 'enums/difficulty';
+import Difficulty from 'enums/Difficulty';
 
 export const easyShield = `https://img.shields.io/badge/-Easy-${easy.substring(
   1
@@ -16,13 +16,13 @@ export const hardShield = `https://img.shields.io/badge/-${hard.substring(
 export const elixirShield =
   'https://img.shields.io/badge/-Elixir-4B275F?style=flat-square&logo=elixir&logoColor=white';
 
-export const getDifficulty = (level: difficulty): string => {
+export const getDifficulty = (level: Difficulty): string => {
   switch (level) {
-    case difficulty.Easy:
+    case Difficulty.Easy:
       return easyShield;
-    case difficulty.Medium:
+    case Difficulty.Medium:
       return mediumShield;
-    case difficulty.Hard:
+    case Difficulty.Hard:
       return hardShield;
     default:
       return easyShield;

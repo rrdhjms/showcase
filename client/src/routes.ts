@@ -1,7 +1,7 @@
 import Home from 'views/Home';
 import Luhn from 'views/Luhn';
 import Acronym from 'views/Acronym';
-import route from 'types/route';
+import Route from 'types/Route';
 import codeThinking from 'assets/images/code-thinking.svg';
 import creditCard from 'assets/images/credit-card.svg';
 import reading from 'assets/images/reading.svg';
@@ -13,7 +13,7 @@ import Bob from 'views/Bob';
 import SpaceAge from 'views/SpaceAge';
 import DnDCharacter from 'views/DnDCharacter';
 import WordCount from 'views/WordCount';
-import difficulty from 'enums/difficulty';
+import Difficulty from 'enums/Difficulty';
 
 /**
  * Create the breadcrumbs from the current url route
@@ -39,7 +39,7 @@ export const breadcrumbs = (props: any) => {
   );
 };
 
-const routes: route[] = [
+const routes: Route[] = [
   {
     path: '/showcase',
     project: false,
@@ -50,7 +50,7 @@ const routes: route[] = [
     imagePath: codeThinking,
     gitLink: '',
     language: '',
-    difficulty: difficulty.Easy,
+    difficulty: Difficulty.Easy,
   },
   {
     path: '/showcase/luhn',
@@ -62,7 +62,7 @@ const routes: route[] = [
     imagePath: creditCard,
     gitLink: 'https://github.com/rrdhjms/elixir-exercism-io/tree/master/luhn',
     language: 'Elixir',
-    difficulty: difficulty.Medium,
+    difficulty: Difficulty.Medium,
   },
   {
     path: '/showcase/acronym',
@@ -75,7 +75,7 @@ const routes: route[] = [
     gitLink:
       'https://github.com/rrdhjms/elixir-exercism-io/tree/master/acronym',
     language: 'Elixir',
-    difficulty: difficulty.Easy,
+    difficulty: Difficulty.Easy,
   },
   {
     path: '/showcase/bob',
@@ -87,7 +87,7 @@ const routes: route[] = [
     imagePath: vrChat,
     gitLink: 'https://github.com/rrdhjms/elixir-exercism-io/tree/master/bob',
     language: 'Elixir',
-    difficulty: difficulty.Easy,
+    difficulty: Difficulty.Easy,
   },
   {
     path: '/showcase/space-age',
@@ -100,7 +100,7 @@ const routes: route[] = [
     gitLink:
       'https://github.com/rrdhjms/elixir-exercism-io/tree/master/space-age',
     language: 'Elixir',
-    difficulty: difficulty.Easy,
+    difficulty: Difficulty.Easy,
   },
   {
     path: '/showcase/dnd-character',
@@ -113,7 +113,7 @@ const routes: route[] = [
     gitLink:
       'https://github.com/rrdhjms/elixir-exercism-io/tree/master/dnd-character',
     language: 'Elixir',
-    difficulty: difficulty.Easy,
+    difficulty: Difficulty.Easy,
   },
   {
     path: '/showcase/word-count',
@@ -126,7 +126,7 @@ const routes: route[] = [
     gitLink:
       'https://github.com/rrdhjms/elixir-exercism-io/tree/master/word-count',
     language: 'Elixir',
-    difficulty: difficulty.Easy,
+    difficulty: Difficulty.Easy,
   },
 ];
 

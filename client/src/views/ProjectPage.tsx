@@ -1,10 +1,10 @@
 import React from 'react';
-import route from 'types/route';
+import Route from 'types/Route';
 import styles from './ProjectPage.module.css';
 import { getDifficulty, getLanguage } from 'constants/shields';
 
 type Props = {
-  info: route;
+  info: Route;
   description?: string;
   about?: string;
   children?: React.ReactNode;

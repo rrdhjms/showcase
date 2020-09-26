@@ -1,6 +1,6 @@
-import difficulty from 'enums/difficulty';
+import Difficulty from 'enums/Difficulty';
 
-type route = {
+type Route = {
   path: string;
   name: string;
   icon: string;
@@ -9,8 +9,8 @@ type route = {
   description: string;
   imagePath: string;
   gitLink: string;
-  difficulty: difficulty;
+  difficulty: Difficulty;
   language: string;
 };
 
-export default route;
+export default Route;

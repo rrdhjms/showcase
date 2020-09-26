@@ -1,13 +1,13 @@
 import React from 'react';
 import { Crumb } from '../types/Breadcrumbs';
 import Breadcrumbs from 'components/Other/Breadcrumbs';
-import route from 'types/route';
+import Route from 'types/Route';
 import HeaderLg from 'components/Header/HeaderLg';
 import Construction from 'components/Temp/Construction';
 
 type Props = {
   crumbs: Array<Crumb>;
-  info: route;
+  info: Route;
 };
 
 const Bob = ({ crumbs, info }: Props) => {

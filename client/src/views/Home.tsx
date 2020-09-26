@@ -7,12 +7,12 @@ import { Input, InputGroup, InputGroupAddon, InputGroupText } from 'reactstrap';
 import { Crumb } from 'types/Breadcrumbs';
 import Breadcrumbs from 'components/Other/Breadcrumbs';
 import HeaderLg from 'components/Header/HeaderLg';
-import route from 'types/route';
+import Route from 'types/Route';
 import { icon_purple } from 'constants/colors';
 
 type Props = {
   crumbs: Array<Crumb>;
-  info: route;
+  info: Route;
 };
 
 const Home = ({ crumbs, info }: Props) => {

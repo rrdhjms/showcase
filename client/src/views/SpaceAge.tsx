@@ -1,7 +1,7 @@
 import React from 'react';
 import { Crumb } from '../types/Breadcrumbs';
 import Breadcrumbs from 'components/Other/Breadcrumbs';
-import route from 'types/route';
+import Route from 'types/Route';
 import HeaderLg from 'components/Header/HeaderLg';
 import ProjectPage from './ProjectPage';
 import styles from './SpaceAge.module.css';
@@ -9,7 +9,7 @@ import { Input, Button, FormGroup, Label, Col, Form } from 'reactstrap';
 
 type Props = {
   crumbs: Array<Crumb>;
-  info: route;
+  info: Route;
 };
 
 const SpaceAge = ({ crumbs, info }: Props) => {

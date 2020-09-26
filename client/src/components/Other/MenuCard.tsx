@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardTitle, CardBody, Row, Col, CardFooter } from 'reactstrap';
 import { useHistory } from 'react-router-dom';
-import difficulty from 'enums/difficulty';
+import Difficulty from 'enums/Difficulty';
 import { getDifficulty } from 'constants/colors';
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
   name: string;
   description: string;
   color: string;
-  difficulty: difficulty;
+  difficulty: Difficulty;
 };
 
 export default function MenuCard({
