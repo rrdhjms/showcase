@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MenuCard from 'components/Other/MenuCard';
-import routes from '../routes';
+import Routes from '../routes';
 import styles from './Home.module.css';
 import ListHeader from 'components/Other/ListHeader';
 import { Input, InputGroup, InputGroupAddon, InputGroupText } from 'reactstrap';
@@ -16,7 +16,7 @@ type Props = {
 };
 
 const Home = ({ crumbs, info }: Props) => {
-  const [routesList, setRoutes] = useState(routes);
+  const [routesList, setRoutes] = useState(Routes);
   const [searchTerm, setSearchTerm] = useState('');
 
   const dynamicSearch = () =>
@@ -26,7 +26,7 @@ const Home = ({ crumbs, info }: Props) => {
 
   useEffect(() => {
     setRoutes(
-      routes.filter((route) => {
+      Routes.filter((route) => {
         return route.name !== 'Home';
       })
     );

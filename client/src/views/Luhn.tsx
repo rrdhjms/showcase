@@ -3,13 +3,13 @@ import { Button, Input, Form } from 'reactstrap';
 import { checkLuhn } from '../api/luhn';
 import { Crumb } from 'types/Breadcrumbs';
 import Breadcrumbs from 'components/Other/Breadcrumbs';
-import Route from 'types/Route';
+import ProjectRoute from 'types/ProjectRoute';
 import HeaderLg from 'components/Header/HeaderLg';
 import ProjectPage from './ProjectPage';
 
 type Props = {
   crumbs: Array<Crumb>;
-  info: Route;
+  info: ProjectRoute;
 };
 
 const Luhn = ({ crumbs, info }: Props) => {

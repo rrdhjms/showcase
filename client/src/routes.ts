@@ -1,7 +1,6 @@
 import Home from 'views/Home';
 import Luhn from 'views/Luhn';
 import Acronym from 'views/Acronym';
-import Route from 'types/Route';
 import codeThinking from 'assets/images/code-thinking.svg';
 import creditCard from 'assets/images/credit-card.svg';
 import reading from 'assets/images/reading.svg';
@@ -14,6 +13,7 @@ import SpaceAge from 'views/SpaceAge';
 import DnDCharacter from 'views/DnDCharacter';
 import WordCount from 'views/WordCount';
 import Difficulty from 'enums/Difficulty';
+import Route from 'types/Route';
 
 /**
  * Create the breadcrumbs from the current url route
@@ -21,7 +21,7 @@ import Difficulty from 'enums/Difficulty';
  */
 export const breadcrumbs = (props: any) => {
   return (
-    routes
+    Routes
       // Get all routes that contain the current one.
       .filter(({ path }) => props.match.path.includes(path))
       // Swap out any dynamic routes with their param values.
@@ -39,7 +39,7 @@ export const breadcrumbs = (props: any) => {
   );
 };
 
-const routes: Route[] = [
+const Routes: Route[] = [
   {
     path: '/showcase',
     project: false,
@@ -130,4 +130,4 @@ const routes: Route[] = [
   },
 ];
 
-export default routes;
+export default Routes;

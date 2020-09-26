@@ -5,9 +5,9 @@ type Route = {
   name: string;
   icon: string;
   Component: React.ReactType;
-  project: boolean;
   description: string;
   imagePath: string;
+  project: boolean;
   gitLink: string;
   difficulty: Difficulty;
   language: string;

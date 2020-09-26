@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import styles from './Showcase.module.css';
-import routes, { breadcrumbs } from '../routes';
+import Routes, { breadcrumbs } from '../routes';
 import TopNav from 'components/Navbar/TopNav';
 import Footer from 'components/Footer/Footer';
 
@@ -15,7 +15,7 @@ function Showcase() {
       <div className="main-content-panel">
         <div className="content content-navbar-lg">
           <Switch>
-            {routes.map((prop, key) => {
+            {Routes.map((prop, key) => {
               return (
                 <Route
                   exact
