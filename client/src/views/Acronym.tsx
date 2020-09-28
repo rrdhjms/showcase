@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Crumb } from '../types/Breadcrumbs';
 import Breadcrumbs from 'components/Other/Breadcrumbs';
-import ProjectRoute from 'types/ProjectRoute';
+import Route from 'types/Route';
 import HeaderLg from 'components/Header/HeaderLg';
 import ProjectPage from './ProjectPage';
 import { Input, Button, Form } from 'reactstrap';
@@ -9,7 +9,7 @@ import { generateAcronym } from 'api/acronym';
 
 type Props = {
   crumbs: Array<Crumb>;
-  info: ProjectRoute;
+  info: Route;
 };
 
 const Acronym = ({ crumbs, info }: Props) => {

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Crumb } from '../types/Breadcrumbs';
 import Breadcrumbs from 'components/Other/Breadcrumbs';
-import ProjectRoute from 'types/ProjectRoute';
+import Route from 'types/Route';
 import HeaderLg from 'components/Header/HeaderLg';
 import Construction from 'components/Temp/Construction';
 
 type Props = {
   crumbs: Array<Crumb>;
-  info: ProjectRoute;
+  info: Route;
 };
 
 const WordCount = ({ crumbs, info }: Props) => {
