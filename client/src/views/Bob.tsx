@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Crumb } from '../types/Breadcrumbs';
 import Breadcrumbs from 'components/Other/Breadcrumbs';
 import Route from 'types/Route';
@@ -17,29 +17,44 @@ type Props = {
 const Bob = ({ crumbs, info }: Props) => {
   const [messages, setMessages] = useState<BobMessage[]>([]);
   const [currentMessage, setCurrentMessage] = useState<string>('');
+  const [isTyping, setIsTyping] = useState(false);
+
+  const messagesEndRef = useRef<HTMLDivElement>(document.createElement('div'));
+
+  const scrollToBottom = () => {
+    messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(scrollToBottom, [messages]);
 
   const handleClick = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const res = await askBob(currentMessage);
+
+    await setIsTyping(true);
 
     await setMessages((messages) => [
       ...messages,
       {
         isBob: false,
         message: currentMessage,
-        timestamp: Date.now(),
+        timestamp: new Date().getTime(),
       },
     ]);
+
+    const res = await askBob(currentMessage);
+
+    setCurrentMessage('');
 
     await setMessages((messages) => [
       ...messages,
       {
         isBob: true,
         message: res.data.result || '',
-        timestamp: Date.now(),
+        timestamp: new Date().getTime(),
       },
     ]);
-    setCurrentMessage('');
+
+    await setIsTyping(false);
   };
 
   useEffect(
@@ -48,12 +63,16 @@ const Bob = ({ crumbs, info }: Props) => {
         ...messages,
         {
           isBob: true,
-          message: 'Hello',
-          timestamp: Date.now(),
+          message: 'Hello ',
+          timestamp: new Date().getTime(),
         },
       ]),
     []
   );
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -62,14 +81,16 @@ const Bob = ({ crumbs, info }: Props) => {
       <ProjectPage info={info} about={'Something about Bob'}>
         <div className={styles.chatWindow}>
           <div className={styles.chatHeader}>
-            <i className="fas fa-robot" />
+            <img
+              src={require('assets/images/bob/bob.svg')}
+              alt="Bob profile pic"
+            />
             <span>
               <h3>Bob</h3>
               <p>Active</p>
             </span>
           </div>
           <div className={styles.chatArea}>
-            <div className={styles.emptyChat}>Say hi to Bob &#128075;</div>
             {messages.map(({ message, timestamp, isBob }) => {
               return (
                 <Message
@@ -79,7 +100,9 @@ const Bob = ({ crumbs, info }: Props) => {
                 />
               );
             })}
+            <div ref={messagesEndRef} />
           </div>
+          {isTyping ? <Typing /> : <></>}
           <Form onSubmit={(e) => handleClick(e)} className={styles.input}>
             <Input
               type="text"
@@ -110,9 +133,14 @@ const Message = ({ message, timestamp, isBob }: MessageProps) => {
     return (
       <div className={`${styles.messageRow} ${styles.bobMessage}`}>
         <div className={`${styles.messageContent}`}>
-          <i className="fas fa-robot" />
+          <img
+            src={require('assets/images/bob/bob.svg')}
+            alt="Bob profile pic"
+          />
           <div className={styles.messageText}>{message}</div>
-          <div className={styles.messageTime}>{Date.now()}</div>
+          <div className={styles.messageTime}>
+            {new Date(timestamp).toLocaleTimeString()}
+          </div>
         </div>
       </div>
     );
@@ -122,7 +150,21 @@ const Message = ({ message, timestamp, isBob }: MessageProps) => {
     <div className={`${styles.messageRow} ${styles.youMessage}`}>
       <div className={`${styles.messageContent}`}>
         <div className={styles.messageText}>{message}</div>
-        <div className={styles.messageTime}>{Date.now()}</div>
+        <div className={styles.messageTime}>
+          {new Date(timestamp).toLocaleTimeString()}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Typing = () => {
+  return (
+    <div className={styles.typingIndicatorRow}>
+      <div className={styles.typingIndicator}>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
   );

@@ -6,9 +6,6 @@ import TopNav from 'components/Navbar/TopNav';
 import Footer from 'components/Footer/Footer';
 
 function Showcase() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <div className={`wrapper ${styles.app}`}>
       <TopNav />

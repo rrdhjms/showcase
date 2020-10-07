@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Crumb } from '../types/Breadcrumbs';
 import Breadcrumbs from 'components/Other/Breadcrumbs';
 import Route from 'types/Route';
@@ -11,6 +11,10 @@ type Props = {
 };
 
 const DnDCharacter = ({ crumbs, info }: Props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Breadcrumbs crumbs={crumbs} />

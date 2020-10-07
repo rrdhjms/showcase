@@ -32,6 +32,10 @@ const Home = ({ crumbs, info }: Props) => {
     );
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Breadcrumbs crumbs={crumbs} />

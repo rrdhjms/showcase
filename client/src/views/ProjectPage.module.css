@@ -10,7 +10,7 @@
 
 .lhs {
   padding-right: 60px;
-  flex-grow: 1;
+  width: 50%;
 }
 
 .rhs {
@@ -18,7 +18,7 @@
   flex-direction: column;
   border-left: 1px solid #e5e5e5;
   padding-left: 60px;
-  flex-grow: 1;
+  width: 50%;
 }
 
 .text > p {
@@ -37,6 +37,11 @@
 }
 
 @media (max-width: 700px) {
+  .projectArea {
+    padding: 0;
+    border: 0;
+    border-top: 1px solid #e5e5e5;
+  }
   .pageContainer {
     display: flex;
     flex-flow: column nowrap;
@@ -46,9 +51,11 @@
 
   .lhs {
     padding-right: 0;
+    width: 100%;
   }
 
   .rhs {
+    width: 100%;
     border-left: 0;
     padding-left: 0;
   }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Input, Form } from 'reactstrap';
 import { checkLuhn } from '../api/luhn';
 import { Crumb } from 'types/Breadcrumbs';
@@ -48,6 +48,10 @@ const Luhn = ({ crumbs, info }: Props) => {
         return <></>;
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

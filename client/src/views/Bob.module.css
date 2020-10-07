@@ -1,6 +1,6 @@
 .chatWindow {
   width: 100%;
-  height: 500px;
+  height: 60vh;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -26,9 +26,8 @@
   margin: 0;
 }
 
-.chatHeader > i {
-  color: #6c63ff;
-  font-size: 2rem;
+.chatHeader > img {
+  width: 40px;
   margin-right: 20px;
 }
 
@@ -41,7 +40,7 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  padding: 0 10px;
+  padding: 20px 10px 0 10px;
   overflow: auto;
 }
 
@@ -66,10 +65,11 @@
 
 .input > input {
   border: 0;
+  padding: 14px 9px;
 }
 
-.input > input::focus {
-  border: 0 !important;
+.input > input:focus {
+  border: 0;
 }
 
 .input > button {
@@ -103,11 +103,9 @@
   column-gap: 15px;
 }
 
-.bobMessage .messageContent i {
-  text-align: center;
+.bobMessage .messageContent img {
   border-radius: 100%;
   grid-row: span 2;
-  font-size: 30px;
   color: #6c63ff;
 }
 
@@ -138,4 +136,44 @@
 .messageTime {
   font-size: 12px;
   color: #777;
+}
+
+/*TYPING INDICATOR*/
+
+.typingIndicatorRow {
+  background-color: rgba(0, 0, 0, 0);
+  display: grid;
+  grid-template-columns: 80px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+.typingIndicator {
+  background-color: #eee;
+  border-radius: 14px 14px 14px 0;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+}
+
+.typingIndicator span {
+  height: 10px;
+  width: 10px;
+  float: left;
+  margin: 0 1px;
+  background-color: #9e9ea1;
+  display: block;
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.typingIndicator span:nth-child(1) {
+  animation: 1s blink infinite 0.3333s;
+}
+
+.typingIndicator span:nth-child(2) {
+  animation: 1s blink infinite 0.6666s;
+}
+
+.typingIndicator span:nth-child(3) {
+  animation: 1s blink infinite 0.9999s;
 }
